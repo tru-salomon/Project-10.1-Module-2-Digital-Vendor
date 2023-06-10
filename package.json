@@ -1,0 +1,12 @@
+{
+  "name": "project-10.1-module-2-digital-vendor",
+  "version": "1.0.0",
+  "description": " Digital Vending Machine - Command Line Application",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "tru-salomon",
+  "license": "ISC"
+}
