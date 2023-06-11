@@ -8,5 +8,11 @@
   },
   "keywords": [],
   "author": "tru-salomon",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@faker-js/faker": "^8.0.2"
+  },
+  "dependencies": {
+    "inquirer": "^9.2.7"
+  }
 }
