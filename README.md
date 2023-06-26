@@ -9,7 +9,7 @@
   <h3 align="center">Smart Digital Vendors</h3>
 
   <p align="center">
-    This is a command line application for a smart digital vending machine that specializes in Rare Digital Products such as valuable collectible NFTS, rare collectors video games, etc.
+    This is a command line application for a smart digital vending machine that specializes in Rare Digital Products such as valuable collectible NFTS, rare vintage and special edition video games, etc.
     <br />
     <br />
     <br />
@@ -70,7 +70,7 @@ Real-Time Availability Updates: Stay informed about the availability of rare dig
 <!-- GETTING STARTED -->
 ## Getting Started
 
-To get started with the Smart Digital Vending Machine, follow these steps:
+To get started with the Smart Digital Vending Machine, follow the instructions below:
 
 ### Prerequisites
 
@@ -78,7 +78,7 @@ Fork and clone this repository to your local machine and ensure you have the nec
 
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+_Below is Quick guide on how you can install and setup the app._
 
 1. Navigate to the desired directory.
 2. Clone the fork the repository using the github desktop app or with the following command in your terminal:

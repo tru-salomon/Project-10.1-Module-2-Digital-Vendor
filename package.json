@@ -4,7 +4,12 @@
   "description": " Digital Vending Machine - Command Line Application",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "create": "node index.js create",
+    "show": "node index.js show",
+    "update": "node index.js update",
+    "delete": "node index.js destroy",
+    "score": "node index.js score"
   },
   "keywords": [],
   "author": "tru-salomon",

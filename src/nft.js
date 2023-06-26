@@ -4,7 +4,7 @@ function createRandomNft() {
 
     const nft = {
         _id: faker.datatype.uuid(),
-        itemPreview: faker.image.abstract(50, 50, true)
+        itemPreview: faker.image.abstract(50, 50, true),
         productName: faker.company.buzzPhrase(),
         price: faker.commerce.price({ min: 299.99, max: 899.99 }),
         inStock: faker.datatype.boolean(),

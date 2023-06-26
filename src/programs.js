@@ -7,6 +7,7 @@ function createRandomProgram() {
         productName: faker.company.buzzVerb(),
         price: faker.commerce.price({ min: 159.99, max: 499.99 }),
         inStock: faker.datatype.boolean(),
+        version: faker.system.semver()
     }
     return program;
 }
