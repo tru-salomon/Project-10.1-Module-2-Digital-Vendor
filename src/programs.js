@@ -3,7 +3,7 @@ const { faker } = require("@faker-js/faker");
 function createRandomProgram() {
 
     const program = {
-        _id: faker.datatype.uuid(),
+        _id: faker.string.uuid(),
         productName: faker.company.buzzVerb(),
         price: faker.commerce.price({ min: 159.99, max: 499.99 }),
         inStock: faker.datatype.boolean(),

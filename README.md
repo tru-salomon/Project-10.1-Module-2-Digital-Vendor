@@ -101,7 +101,7 @@ Explore the Catalog: Browse through the available rare digital products by follo
 
 Select and Purchase: Once you've found a digital product you'd like to acquire, simply follow the instructions to select the item and proceed with the purchase. The vending machine will guide you through the secure transaction process.
 
-Enjoy Your Digital Treasure: After a successful purchase, the vending machine will deliver your rare digital product to your specified location. Enjoy your newly acquired digital treasure and cherish the uniqueness it brings!
+Enjoy Your Digital Treasure: After a successful purchase, the vending machine will deliver your rare digital product to your specified location (e.g. Email, Cloud Storage, USB shipped to address). Enjoy your newly acquired digital treasure and cherish the uniqueness it brings!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
