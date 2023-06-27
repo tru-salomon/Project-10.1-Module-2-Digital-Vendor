@@ -5,9 +5,7 @@ const { writeJSONFile, readJSONFile } = require("./helpers.js");
 const { create, index, show } = require("./src/productsController.js");
 const { up } = require("inquirer/lib/utils/readline.js");
 
-let games = readJSONFile("./data", "games.json");
-let nfts = readJSONFile("./data", "nfts.json");
-let programs = readJSONFile("./data", "programs.json");
+
 
 const inform = console.log;
 
@@ -16,14 +14,6 @@ function run() {
     let updatedProduct = [];
     const action = process.argv[2];
     const productType = process.argv[3];
-
-    // switch (value1) {
-    //     case '1':
-    //         switch (value2) {
-    //             case '1': val = "90"; break;
-    //             case '2': val = "80"; break;
-    //             case '3': val = "70"; break;
-    //         }
 
     switch (action) {
         case "index":
@@ -42,7 +32,8 @@ function run() {
             inform(action, productType, productIdentifier);
             break;
         case "destroy":
-            inform(productType, productIdentifier);
+            updatedProduct = destroy(productType, productIdentifier);
+            writeToFile = true;
             break;
         case "score":
             inform(action);
