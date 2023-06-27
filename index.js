@@ -1,9 +1,7 @@
-const { createRandomGame, randomGameCreator } = require("./src/games.js");
-const { createRandomNft, randomNftCreator } = require("./src/nft.js");
-const { createRandomProgram, randomProgramCreator } = require("./src/programs.js");
-const { writeJSONFile, readJSONFile } = require("./helpers.js");
-const { create, index, show } = require("./src/productsController.js");
-const { up } = require("inquirer/lib/utils/readline.js");
+// Description: This file is the entry point for the application. It will be used to run the application from the command line.
+
+const { writeJSONFile} = require("./helpers.js");
+const { create, index, show, destroy, edit } = require("./src/productsController.js");
 
 
 
@@ -11,7 +9,7 @@ const inform = console.log;
 
 function run() {
     let writeToFile = false;
-    let updatedProduct = [];
+    let updatedProducts = [];
     const action = process.argv[2];
     const productType = process.argv[3];
 
@@ -21,7 +19,7 @@ function run() {
             inform(productView);
             break;
         case "create":
-            updatedProduct = create(productType, productName, price, inStock);
+            updatedProducts = create(productType, productName, price, inStock);
             writeToFile = true;
             break;
         case "show":
@@ -29,19 +27,19 @@ function run() {
             inform(selectedProduct);
             break;
         case "update":
-            inform(action, productType, productIdentifier);
+            updatedProducts = edit(productType, productIdentifier, productToUpdate, price, inStock);
+            writeToFile = true;            
             break;
         case "destroy":
-            updatedProduct = destroy(productType, productIdentifier);
+            updatedProducts = destroy(productType, productIdentifier);
             writeToFile = true;
-            break;
-        case "score":
-            inform(action);
             break;
         default:
             inform("There was an error.");
     }
     if (writeToFile) {
-        writeJSONFile("./data", `${productType}.json`, updatedProduct);
+        writeJSONFile("./data", `${productType}.json`, updatedProducts);
+    }
 }
+
 run();

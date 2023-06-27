@@ -1,15 +1,17 @@
 {
   "name": "project-10.1-module-2-digital-vendor",
-  "version": "1.0.0",
+  "version": "0.9.9",
   "description": " Digital Vending Machine - Command Line Application",
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "index": "node index.js index",
     "create": "node index.js create",
     "show": "node index.js show",
     "update": "node index.js update",
     "delete": "node index.js destroy",
-    "score": "node index.js score"
+    "score": "node index.js score",
+    "data sample": "node ./src/sampleDataController.js"
   },
   "keywords": [],
   "author": "tru-salomon",

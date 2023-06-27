@@ -1,8 +1,12 @@
+
+const { readJSONFile } = require("./helpers.js");
 const { faker } = require("@faker-js/faker");
 
 let games = readJSONFile("./data", "games.json");
 let nfts = readJSONFile("./data", "nfts.json");
 let programs = readJSONFile("./data", "programs.json");
+
+const inform = console.log;
 
 function create(productType, productName, price, inStock) {
     const productName = process.argv[4];
@@ -104,18 +108,75 @@ function destroy(productType, productIdentifier) {
     return result;
 }
 
-function edit(productType, productIdentifier, updatedProduct) {
+function edit(productType, productIdentifier, productToUpdate, price, inStock) {
     productIdentifier = process.argv[4];
-    // updatedProduct = process.argv[5];
+    productToUpdate = process.argv[5];
+    price = process.argv[6]
+    inStock = process.argv[7]
+    let index;
     let result;
     
     switch (productType) {
         case "games":
-            const index = games.findIndex((game) => game.id === productIdentifier);
+            index = games.findIndex((game) => game.id === productIdentifier);
             if (index > -1) {
-                games[index]._id = faker.string.uuid();
-                games[index].productName = updatedProduct;
-                
+                games[index] =
+                {
+                    _id: faker.string.uuid(),
+                    productName: productToUpdate,
+                    price: price,
+                    inStock: inStock
+                }
+                inform("Product updated.");
+                result = games;
+            } else {
+                inform("Product not found.");
+                result = games;
+            }
+            break;
+        case "nfts":
+            index = nfts.findIndex((nft) => nft.id === productIdentifier);
+            if (index > -1) {
+                nfts[index] =
+                {
+                    _id: faker.string.uuid(),
+                    itemPreview: faker.image.urlLoremFlickr({ width: 50, height: 50, category: 'abstract' }),
+                    productName: productToUpdate,
+                    price: price,
+                    inStock: inStock
+                }
+                inform("Product updated.");
+                result = nfts;
+            } else {
+                inform("Product not found.");
+                result = nfts;
+            }
+            break;
+        case "programs":
+            index = programs.findIndex((program) => program.id === productIdentifier);
+            if (index > -1) {
+                programs[index] =
+                {
+                    _id: faker.string.uuid(),
+                    productName: productToUpdate,
+                    price: price,
+                    inStock: inStock,
+                    version: faker.system.semver()
+                }
+                inform("Product updated.");
+                result = programs;
+            } else {
+                inform("Product not found.");
+                result = programs;
+            }
+            break;
+        default: "There was an error."
+    }
+    return result;
+}
+
+
+
 
 
 
